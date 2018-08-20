@@ -1,0 +1,127 @@
+  #--------------------------#
+  # Battery levels not in HA #
+  #--------------------------#
+  - platform: mqtt
+    name: livingroom_temperature_sensor_battery_level
+    friendly_name: Batteri
+    state_topic: 'sensors/vardagsrum/temperatursensor_battery'
+    device_class: battery
+    unit_of_measurement: '%'
+    icon: mdi:battery
+  - platform: mqtt
+    name: olivia_temperature_sensor_battery_level
+    friendly_name: Batteri
+    state_topic: 'sensors/olivia/temperatursensor_battery'
+    device_class: battery
+    unit_of_measurement: '%'
+    icon: mdi:battery
+  - platform: mqtt
+    name: bedroom_temperature_sensor_battery_level
+    friendly_name: Batteri
+    state_topic: 'sensors/sovrum/temperatursensor_battery'
+    device_class: battery
+    unit_of_measurement: '%'
+    icon: mdi:battery
+
+  #--------------------------#
+  # BT Presence Sensors      #
+  #--------------------------#
+
+  #--------------------------#
+  # Kristoffer Presence BT   #
+  #--------------------------#
+  - platform: mqtt
+    state_topic: 'location/owner/vardagsrummet/70:F0:87:DC:F1:53'
+    value_template: '{{ value_json.confidence }}'
+    unit_of_measurement: '%'
+    name: 'Presence Kristoffer Livingroom'
+
+  - platform: min_max
+    name: "Kristoffer Home Occupancy Confidence"
+    type: mean
+    round_digits: 0
+    entity_ids:
+      - sensor.presence_kristoffer_livingroom
+
+  #--------------------------#
+  # Johanna Presence BT      #
+  #--------------------------#
+  - platform: mqtt
+    state_topic: 'location/owner/vardagsrummet/00:00:00:00:00:00'
+    value_template: '{{ value_json.confidence }}'
+    unit_of_measurement: '%'
+    name: 'Presence Johanna Livingroom'
+
+  - platform: min_max
+    name: "Johanna Home Occupancy Confidence"
+    type: mean
+    round_digits: 0
+    entity_ids:
+      - sensor.presence_johanna_livingroom
+
+  #--------------------------#
+  # Servers                  #
+  #--------------------------#
+
+  #--------------------------#
+  # NZBGet Sensor            #
+  #--------------------------#
+  - platform: nzbget
+    host: !secret nzbget_host
+    username: !secret nzbget_username
+    password: !secret nzbget_password
+    monitored_variables:
+      - article_cache
+      - average_download_rate
+      - download_paused
+      - download_rate
+      - download_size
+      - free_disk_space
+      - post_paused
+      - remaining_size
+      - uptime
+
+  #--------------------------#
+  # Systemmonitor Sensor     #
+  #--------------------------#
+  - platform: systemmonitor
+    resources:
+      - type: disk_use_percent
+        arg: /
+      - type: network_in
+        arg: eth0
+      - type: network_out
+        arg: eth0
+      - type: packets_in
+        arg: eth0
+      - type: packets_out
+        arg: eth0
+      - type: ipv4_address
+        arg: eth0
+      - type: ipv6_address
+        arg: eth0
+      - type: load_15m
+      - type: last_boot
+      - type: since_last_boot
+
+  #--------------------------#
+  # RegroPie Glances         #
+  #--------------------------#
+  - platform: glances
+    host: !secret retropie_glances_host
+    name: 'RetroPie'
+    resources:
+      - 'disk_use_percent'
+      - 'memory_use_percent'
+      - 'processor_load'
+
+  #--------------------------#
+  # OpenMediaVault Glances   #
+  #--------------------------#
+  - platform: glances
+    host: !secret omv_glances_host
+    name: 'OpenMediaVault'
+    resources:
+      - 'disk_use_percent'
+      - 'memory_use_percent'
+      - 'processor_load'

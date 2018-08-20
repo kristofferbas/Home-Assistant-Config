@@ -1,0 +1,10 @@
+*
+!*.yaml
+!www/
+!README.md
+!lovelace/
+!lovelace/custom-cards
+secrets.yaml
+known_devices.yaml
+._*
+lovelace/._*

@@ -1,0 +1,15 @@
+# Speakers
+title: Sonos
+id: sonos
+icon: mdi:speaker-wireless
+cards:
+
+  # Livingroom Sonos if playing
+  - type: entity-filter
+    entities:
+      - media_player.livingroom_sonos
+    state_filter:
+      - 'playing'
+    card:
+      type: media-control
+      entity: media_player.livingroom_sonos

@@ -1,0 +1,125 @@
+# Lights
+title: Belysning
+id: belysning
+icon: mdi:lightbulb-on
+cards:
+
+  - type: vertical-stack
+    cards:
+
+      - type: glance
+        show_name: false
+        show_state: false
+        column_width: calc(100% / 4)
+        entities:
+          - entity: light.all_hallway
+            icon: mdi:door
+            tap_action: toggle
+          - entity: light.all_livingroom
+            icon: mdi:sofa
+            tap_action: toggle
+          - entity: light.all_bedroom
+            icon: mdi:hotel
+            tap_action: toggle
+          - entity: light.all_olivia
+            icon: mdi:cat
+            tap_action: toggle
+
+      # Hallway lights
+      - type: entities
+        title: Hallen
+        show_header_toggle: false
+        entities:
+          - entity: light.hallway_ceiling_1
+            name: Taklampa
+            icon: mdi:ceiling-light
+            type: custom:slider-entity-row
+            break_slider: true
+            hide_when_off: true
+
+      # Livingroom lights
+      - type: custom:vertical-stack-in-card
+        title: Vardagsrummet
+        cards:
+          - type: entities
+            entities:
+              - entity: light.livingroom_all_window
+                name: Fönsterbelysning
+                icon: mdi:lamp
+                type: custom:slider-entity-row
+                break_slider: true
+                hide_when_off: true
+          - type: conditional
+            conditions:
+              - entity: light.livingroom_all_window
+                state: "on"
+            card:
+              type: entities
+              entities:
+                - type: divider
+                - entity: light.livingroom_window_1
+                  name: Vänster
+                  icon: mdi:lamp
+                  type: custom:slider-entity-row
+                  break_slider: true
+                  hide_when_off: true
+                - entity: light.livingroom_window_2
+                  name: Höger
+                  icon: mdi:lamp
+                  type: custom:slider-entity-row
+                  break_slider: true
+                  hide_when_off: true
+
+  - type: vertical-stack
+    cards:
+
+      # Bedroom lights
+      - type: entities
+        title: Sovrummet
+        show_header_toggle: false
+        entities:
+          - entity: light.bedroom_ceiling
+            name: Taklampa
+            icon: mdi:ceiling-light
+            type: custom:slider-entity-row
+            break_slider: true
+            hide_when_off: true
+          - entity: light.bedroom_bureau
+            name: Byrålampa
+            icon: mdi:lamp
+            type: custom:slider-entity-row
+            break_slider: true
+            hide_when_off: true
+          - entity: light.bedroom_window
+            name: Fönsterlampa
+            icon: mdi:lamp
+            type: custom:slider-entity-row
+            break_slider: true
+            hide_when_off: true
+
+      # Olivia lights
+      - type: custom:vertical-stack-in-card
+        title: Olivias Rum
+        cards:
+          - type: entities
+            entities:
+              - entity: light.olivia_ceiling
+                name: Taklampa
+                icon: mdi:ceiling-light
+                type: custom:slider-entity-row
+                break_slider: true
+                hide_when_off: true
+          - type: conditional
+            conditions:
+              - entity: light.olivia_ceiling
+                state: "on"
+            card:
+              type: entities
+              entities:
+                - type: divider
+                - entity: scene.olivia_default
+                  name: Normalt
+                  icon: mdi:lightbulb
+                - entity: scene.olivia_colored
+                  name: Disko
+                  icon: mdi:palette

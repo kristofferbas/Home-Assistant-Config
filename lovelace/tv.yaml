@@ -1,0 +1,13 @@
+# TV
+title: TV
+id: tv
+icon: mdi:television
+cards:
+
+  # Livingroom Chromecast
+  - type: media-control
+    entity: media_player.livingroom_chromecast
+
+  # Livingroom Kodi
+  - type: media-control
+    entity: media_player.kodi

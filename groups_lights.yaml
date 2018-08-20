@@ -1,0 +1,28 @@
+  - platform: group
+    name: all_hallway
+    entities:
+      - light.hallway_ceiling_1
+
+  - platform: group
+    name: all_livingroom
+    entities:
+      - light.livingroom_window_1
+      - light.livingroom_window_2
+
+  - platform: group
+    name: all_bedroom
+    entities:
+      - light.bedroom_ceiling
+      - light.bedroom_window
+      - light.bedroom_bureau
+
+  - platform: group
+    name: all_olivia
+    entities:
+      - light.olivia_ceiling
+
+  - platform: group
+    name: livingroom_all_window
+    entities:
+      - light.livingroom_window_1
+      - light.livingroom_window_2

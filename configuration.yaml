@@ -1,0 +1,140 @@
+homeassistant:
+  name: Hemma
+  latitude: !secret home_latitude
+  longitude: !secret home_longitude
+  elevation: !secret home_elevation
+  unit_system: metric
+  time_zone: Europe/Stockholm
+  customize: !include customize.yaml
+
+  auth_providers:
+   - type: homeassistant
+   - type: legacy_api_password
+
+auth:
+
+frontend:
+  javascript_version: latest
+  themes:
+    midnight: !include theme_midnight.yaml
+
+http:
+  api_password: !secret http_password
+  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
+  #ssl_certificate: /ssl/fullchain.pem
+  #ssl_key: /ssl/privkey.pem
+
+updater:
+  # Optional, allows Home Assistant developers to focus on popular components.
+  # include_used_components: true
+
+discovery:
+
+mqtt:
+  broker: core-mosquitto
+
+history:
+
+logbook:
+
+logger:
+  default: debug
+
+sun:
+
+tts:
+  - platform: google
+
+config:
+
+cloud:
+
+device_tracker:
+
+#--------------------------#
+# Light Groups              #
+#--------------------------#
+light: !include groups_lights.yaml
+
+#--------------------------#
+# Scenes                   #
+#--------------------------#
+scene: !include scene.yaml
+
+ios:
+
+notify:
+
+custom_updater:
+
+homekit:
+  filter:
+    include_domains:
+      - light
+
+media_player:
+  - platform: kodi
+    host: !secret kodi_host
+    username: !secret kodi_username
+    password: !secret kodi_password
+
+#--------------------------#
+# Sensors                  #
+#--------------------------#
+
+sensor: !include sensors.yaml
+
+# Weather YWeather
+weather:
+  - platform: yweather
+
+recorder:
+  purge_keep_days: 365
+  db_url: !secret recorder_db_url
+
+# Input Boolean Switches
+input_boolean:
+  livingroom_window_timer:
+  bedroom_window_timer:
+  program_vacation:
+  lovelace_generate_ui:
+  program_winter:
+  program_christmas:
+  notification_olivia_temperature:
+  notification_livingroom_temperature:
+  notification_bedroom_temperature:
+
+# Shell Commands
+shell_command:
+  lovelace_gen: 'python /config/lovelace-gen.py'
+
+input_number:
+  slider_olivia_temperature_min:
+    min: 15
+    max: 35
+    step: 1
+
+  slider_olivia_temperature_max:
+    min: 15
+    max: 35
+    step: 1
+
+  slider_livingroom_temperature_min:
+    min: 15
+    max: 35
+    step: 1
+
+  slider_livingroom_temperature_max:
+    min: 15
+    max: 35
+    step: 1
+
+  slider_bedroom_temperature_min:
+    min: 15
+    max: 35
+    step: 1
+
+  slider_bedroom_temperature_max:
+    min: 15
+    max: 35
+    step: 1

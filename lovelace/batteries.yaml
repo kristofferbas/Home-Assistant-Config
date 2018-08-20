@@ -1,0 +1,39 @@
+# Batteries
+title: Batterier
+id: batterier
+icon: mdi:battery
+cards:
+
+  # Temperature sensors
+  - type: entities
+    title: Temperatursensorer
+    entities:
+      - entity: sensor.livingroom_temperature_sensor_battery_level
+        name: Vardagsrummet
+      - entity: sensor.bedroom_temperature_sensor_battery_level
+        name: Sovrummet
+      - entity: sensor.olivia_temperature_sensor_battery_level
+        name: Olivias Rum
+
+  # Wall switches
+  - type: entities
+    title: Strömbrytare
+    entities:
+      - entity: sensor.livingroom_wall_switch_battery_level
+        name: Vardagsrummet
+      - entity: sensor.olivia_wall_switch_battery_level
+        name: Olivias Rum
+
+  # Mobile units
+  - type: entities
+    title: Mobila Enheter
+    entities:
+      - entity: sensor.kristoffers_iphone_battery_level
+        name: Kristoffer iPhone
+      - entity: sensor.kristoffers_iphone_battery_state
+        name: Status
+      - type: divider
+      - entity: sensor.kristoffers_ipad_battery_level
+        name: Kristoffers ipad
+      - entity: sensor.kristoffers_ipad_battery_state
+        name: Status

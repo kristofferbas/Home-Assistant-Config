@@ -1,0 +1,14 @@
+- name: olivia_default
+  entities:
+    light.olivia_ceiling:
+      state: on
+      brightness: 254
+      rgb_color: [255, 207, 120]
+      effect: stop
+- name: olivia_colored
+  entities:
+    light.olivia_ceiling:
+      state: on
+      brightness: 254
+      transition: 15
+      effect: colorloop

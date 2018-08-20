@@ -1,0 +1,64 @@
+# Climate
+title: Klimat
+id: klimat
+icon: mdi:thermometer
+cards:
+
+  # Left stack
+  - type: vertical-stack
+    cards:
+
+    - type: glance
+      title: Vardagsrummet
+      column_width: calc(100% / 3)
+      entities:
+        - entity: sensor.livingroom_temperature_sensor
+        - entity: sensor.livingroom_temperature_sensor_2
+        - entity: sensor.livingroom_temperature_sensor_3
+
+    - type: glance
+      title: Sovrummet
+      column_width: calc(100% / 3)
+      entities:
+        - entity: sensor.bedroom_temperature_sensor
+        - entity: sensor.bedroom_temperature_sensor_2
+        - entity: sensor.bedroom_temperature_sensor_3
+
+    - type: glance
+      title: Olivias Rum
+      column_width: calc(100% / 3)
+      entities:
+        - entity: sensor.olivia_temperature_sensor
+        - entity: sensor.olivia_temperature_sensor_2
+        - entity: sensor.olivia_temperature_sensor_3
+
+  # Right Stack
+  - type: vertical-stack
+    cards:
+
+    # History Graph 48h
+    - type: history-graph
+      title: 'Temperatur senaste 48h'
+      hours_to_show: 48
+      entities:
+        - entity: sensor.livingroom_temperature_sensor
+          name: Vardagsrummet
+        - entity: sensor.bedroom_temperature_sensor
+          name: Sovrummet
+        - entity: sensor.olivia_temperature_sensor
+          name: Olivias Rum
+
+    # History Graph 7 days
+    - type: history-graph
+      title: 'Temperatur senaste veckan'
+      hours_to_show: 168
+      entities:
+        - entity: sensor.livingroom_temperature_sensor
+          name: Vardagsrummet
+        - entity: sensor.bedroom_temperature_sensor
+          name: Sovrummet
+        - entity: sensor.olivia_temperature_sensor
+          name: Olivias Rum
+
+    - type: weather-forecast
+      entity: weather.yweather

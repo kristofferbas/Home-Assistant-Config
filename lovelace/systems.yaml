@@ -1,0 +1,80 @@
+title: System
+id: system
+icon: mdi:server-network
+cards:
+
+  - type: vertical-stack
+    cards:
+    - type: entities
+      title: HassOS
+      entities:
+          - sensor.ipv4_address_eth0
+          - sensor.ipv6_address_eth0
+          - sensor.last_boot
+          - sensor.since_last_boot
+
+    - type: history-graph
+      title: HassIO Nätverk
+      entities:
+        - sensor.network_in_eth0
+        - sensor.network_out_eth0
+        - sensor.packets_in_eth0
+        - sensor.packets_out_eth0
+
+  - type: vertical-stack
+    cards:
+
+    - type: history-graph
+      title: 'Processoranvädning'
+      entities:
+        - entity: sensor.load_15m
+          name: HassOS
+        - entity: sensor.openmediavault_cpu_load
+          name: OMV
+        - entity: sensor.retropie_cpu_load
+          name: RetroPie
+
+    - type: history-graph
+      title: 'Minnesanvändning'
+      entities:
+        - entity: sensor.memory_use_percent_
+          name: HassOS
+        - entity: sensor.openmediavault_ram_used
+          name: OMV
+        - entity: sensor.retropie_ram_used
+          name: RetroPie
+
+    - type: history-graph
+      title: 'Diskanvändning'
+      entities:
+        - entity: sensor.disk_use_percent_
+          name: HassOS
+        - entity: sensor.openmediavault_disk_used
+          name: OMV
+        - entity: sensor.retropie_disk_used
+          name: RetroPie
+
+  - type: vertical-stack
+    cards:
+
+    - type: entities
+      title: NZBGet
+      entities:
+        - entity: sensor.nzbget_article_cache
+        - entity: sensor.nzbget_average_speed
+        - entity: sensor.nzbget_disk_free
+        - entity: sensor.nzbget_download_paused
+        - entity: sensor.nzbget_post_processing_paused
+        - entity: sensor.nzbget_queue_size
+        - entity: sensor.nzbget_size
+        - entity: sensor.nzbget_average_speed
+        - entity: sensor.nzbget_uptime
+        - entity: sensor.nzbget_speed
+
+    - type: entities
+      title: Samsung M2020 - Vardagsrummet
+      entities:
+        - entity: sensor.samsung_m2020_series_1000251
+        - entity: sensor.samsung_m2020_series_1000251_output_tray_0
+        - entity: sensor.samsung_m2020_series_1000251_toner_black
+        - entity: sensor.samsung_m2020_series_1000251_tray_1

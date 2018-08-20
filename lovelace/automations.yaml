@@ -1,0 +1,74 @@
+# Automations
+title: Automationer
+id: automationer
+icon: mdi:toggle-switch
+cards:
+
+  # Timers
+  - type: entities
+    title: Timers
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.livingroom_window_timer
+        icon: mdi:timer
+        name: Vardagsrum - Fönsterlampor
+      - entity: input_boolean.bedroom_window_timer
+        icon: mdi:timer
+        name: Sovrum - Fönsterlampa
+
+  # Programs
+  - type: entities
+    title: Program
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.program_vacation
+        icon: mdi:beach
+        name: Semester
+      - entity: input_boolean.program_winter
+        icon: mdi:snowman
+        name: Vinter
+      - entity: input_boolean.program_christmas
+        icon: mdi:gift
+        name: Jul
+
+  - type: entities
+    title: Temperaturnotifieringar
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.notification_livingroom_temperature
+        icon: mdi:sofa
+        name: Vardagsrummet
+      - entity: input_number.slider_livingroom_temperature_min
+        icon: mdi:arrow-down-bold
+      - entity: input_number.slider_livingroom_temperature_max
+        icon: mdi:arrow-up-bold
+
+      - type: divider
+
+      - entity: input_boolean.notification_bedroom_temperature
+        icon: mdi:hotel
+        name: Sovrummet
+      - entity: input_number.slider_bedroom_temperature_min
+        icon: mdi:arrow-down-bold
+      - entity: input_number.slider_bedroom_temperature_max
+        icon: mdi:arrow-up-bold
+
+      - type: divider
+
+      - entity: input_boolean.notification_olivia_temperature
+        icon: mdi:panda
+        name: Olivias Rum
+      - entity: input_number.slider_olivia_temperature_min
+        icon: mdi:arrow-down-bold
+      - entity: input_number.slider_olivia_temperature_max
+        icon: mdi:arrow-up-bold
+
+  # Generators
+  - type: entities
+    title: Generatorer
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.lovelace_generate_ui
+        secondary_info: last-changed
+        icon: mdi:cogs
+        name: Generera nytt Lovelace UI

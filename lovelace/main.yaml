@@ -1,0 +1,92 @@
+resources:
+  - url: !resource custom-cards/vertical-stack-in-card.js
+    type: js
+  - url: !resource custom-cards/slider-entity-row.js
+    type: js
+
+title: Vårt Hem
+views:
+
+  # Hemma Tab
+  - title: Hemma
+    id: hemma
+    icon: mdi:home
+    cards:
+
+      # Left stack
+      - type: vertical-stack
+        cards:
+
+        # Device Tracker Horizontal
+        - type: horizontal-stack
+          cards:
+
+            # Device Tracker Kristoffer
+            - type: picture-entity
+              entity: device_tracker.kristoffer_presence
+              image: /local/pictures/people/kristoffer.jpeg
+              show_name: false
+              state_image:
+                "just_left": /local/pictures/people/kristoffer_bw.jpeg
+                "not_home": /local/pictures/people/kristoffer_bw.jpeg
+
+            # Device Tracker Johanna
+            - type: picture-entity
+              entity: device_tracker.johanna_presence
+              image: /local/pictures/people/johanna.jpeg
+              show_name: false
+              state_image:
+                "just_left": /local/pictures/people/johanna_bw.jpeg
+                "not_home": /local/pictures/people/johanna_bw.jpeg
+
+      - type: entity-filter
+        entities:
+          - entity: light.hallway_ceiling_1
+            name: Hall - Taklampa
+            icon: mdi:ceiling-light
+            type: custom:slider-entity-row
+          - entity: light.livingroom_all_window
+            name: Vardagsrum - Fönsterbelysning
+            icon: mdi:lamp
+            type: custom:slider-entity-row
+            break_slider: true
+          - entity: light.bedroom_ceiling
+            name: Sovrum - Taklampa
+            icon: mdi:ceiling-light
+            type: custom:slider-entity-row
+            break_slider: true
+          - entity: light.bedroom_bureau
+            name: Sovrum - Byrålampa
+            icon: mdi:lamp
+            type: custom:slider-entity-row
+            break_slider: true
+          - entity: light.bedroom_window
+            name: Sovrum - Fönsterlampa
+            icon: mdi:lamp
+            type: custom:slider-entity-row
+            break_slider: true
+          - entity: light.olivia_ceiling
+            name: Olivias Rum - Taklampa
+            icon: mdi:ceiling-light
+            type: custom:slider-entity-row
+            break_slider: true
+        state_filter:
+          - "on"
+        card:
+          type: entities
+          title: Påslagen Belysning
+          show_header_toggle: false
+
+  - !include climate.yaml
+
+  - !include lights.yaml
+
+  - !include tv.yaml
+
+  - !include speakers.yaml
+
+  - !include automations.yaml
+
+  - !include batteries.yaml
+
+  - !include systems.yaml
