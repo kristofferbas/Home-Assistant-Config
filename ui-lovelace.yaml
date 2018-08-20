@@ -4,8 +4,8 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1534791973.1329713'}
-- {type: js, url: '/local/lovelace/slider-entity-row.js?1534791973.1329713'}
+- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1534800512.830288'}
+- {type: js, url: '/local/lovelace/slider-entity-row.js?1534800512.830288'}
 title: Vårt Hem
 views:
 - cards:
@@ -186,18 +186,24 @@ views:
   - entities:
     - {entity: input_boolean.notification_livingroom_temperature, icon: 'mdi:sofa',
       name: Vardagsrummet}
-    - {entity: input_number.slider_livingroom_temperature_min, icon: 'mdi:arrow-down-bold'}
-    - {entity: input_number.slider_livingroom_temperature_max, icon: 'mdi:arrow-up-bold'}
+    - {entity: input_number.slider_livingroom_temperature_min, icon: 'mdi:arrow-down-bold',
+      name: Minimum}
+    - {entity: input_number.slider_livingroom_temperature_max, icon: 'mdi:arrow-up-bold',
+      name: Maximum}
     - {type: divider}
     - {entity: input_boolean.notification_bedroom_temperature, icon: 'mdi:hotel',
       name: Sovrummet}
-    - {entity: input_number.slider_bedroom_temperature_min, icon: 'mdi:arrow-down-bold'}
-    - {entity: input_number.slider_bedroom_temperature_max, icon: 'mdi:arrow-up-bold'}
+    - {entity: input_number.slider_bedroom_temperature_min, icon: 'mdi:arrow-down-bold',
+      name: Minimum}
+    - {entity: input_number.slider_bedroom_temperature_max, icon: 'mdi:arrow-up-bold',
+      name: Maximum}
     - {type: divider}
     - {entity: input_boolean.notification_olivia_temperature, icon: 'mdi:panda', name: Olivias
         Rum}
-    - {entity: input_number.slider_olivia_temperature_min, icon: 'mdi:arrow-down-bold'}
-    - {entity: input_number.slider_olivia_temperature_max, icon: 'mdi:arrow-up-bold'}
+    - {entity: input_number.slider_olivia_temperature_min, icon: 'mdi:arrow-down-bold',
+      name: Minimum}
+    - {entity: input_number.slider_olivia_temperature_max, icon: 'mdi:arrow-up-bold',
+      name: Maximum}
     show_header_toggle: false
     title: Temperaturnotifieringar
     type: entities

@@ -40,8 +40,10 @@ cards:
         name: Vardagsrummet
       - entity: input_number.slider_livingroom_temperature_min
         icon: mdi:arrow-down-bold
+        name: Minimum
       - entity: input_number.slider_livingroom_temperature_max
         icon: mdi:arrow-up-bold
+        name: Maximum
 
       - type: divider
 
@@ -50,8 +52,10 @@ cards:
         name: Sovrummet
       - entity: input_number.slider_bedroom_temperature_min
         icon: mdi:arrow-down-bold
+        name: Minimum
       - entity: input_number.slider_bedroom_temperature_max
         icon: mdi:arrow-up-bold
+        name: Maximum
 
       - type: divider
 
@@ -60,8 +64,10 @@ cards:
         name: Olivias Rum
       - entity: input_number.slider_olivia_temperature_min
         icon: mdi:arrow-down-bold
+        name: Minimum
       - entity: input_number.slider_olivia_temperature_max
         icon: mdi:arrow-up-bold
+        name: Maximum
 
   # Generators
   - type: entities
