@@ -3,7 +3,7 @@
 !www/
 !README.md
 !lovelace/
-!lovelace/custom-cards
+!lovelace/custom-cards/
 secrets.yaml
 known_devices.yaml
 ._*
