@@ -1,35 +1,35 @@
-#Home-Assistant-Config
+# Home-Assistant-Config
 
-##Home Assistant
-###Computer:
+## Home Assistant
+### Computer:
 Raspberry Pi 3 Model B
 
-###OS:
+### OS:
 HassOS
 
-###Hubs:
+### Hubs:
 Zigbee; Conbee USB stick
 
-###Add-ons:
-*Samba Share
-*Mosquitto Broker
-*MariaDB
-*SSH Server
-*deCONZ
-*Node-RED
+### Add-ons:
+* Samba Share
+* Mosquitto Broker
+* MariaDB
+* SSH Server
+* deCONZ
+* Node-RED
 
-##Lights:
-*Innr
-*Innr
-*Innr
+## Lights:
+* Innr
+* Innr
+* Innr
 
-##Temperature Sensors:
+## Temperature Sensors:
 Xiaomi Sensor * 3
 
-##Media:
-*Chromecast * 2 (Livingroom, Bedroom)
-*Sonos Play 3 (Livingroom)
-*Raspberry Pi 3 Model B+ running Kodi (Livingroom)
+## Media:
+* Chromecast * 2 (Livingroom, Bedroom)
+* Sonos Play 3 (Livingroom)
+* Raspberry Pi 3 Model B+ running Kodi (Livingroom)
 
-##Automations
+## Automations
 All automations done in Node-RED.
