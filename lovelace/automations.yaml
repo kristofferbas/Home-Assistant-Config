@@ -74,7 +74,15 @@ cards:
     title: Generatorer
     show_header_toggle: false
     entities:
-      - entity: input_boolean.lovelace_generate_ui
-        secondary_info: last-changed
-        icon: mdi:cogs
+      - type: call-service
+        service: shell_command.lovelace_gen
+        icon: mdi:refresh
+        action_name: "Kör"
+        service_data: {}
         name: Generera nytt Lovelace UI
+
+  - type: custom:tracker-card
+    title:
+    trackers:
+      - sensor.custom_card_tracker
+      - sensor.custom_component_tracker

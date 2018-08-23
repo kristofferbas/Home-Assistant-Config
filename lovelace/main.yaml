@@ -1,4 +1,6 @@
 resources:
+  - url: !resource custom-cards/tracker-card.js
+    type: js
   - url: !resource custom-cards/vertical-stack-in-card.js
     type: js
   - url: !resource custom-cards/slider-entity-row.js
