@@ -1,0 +1,33 @@
+# Home
+title: Hemma
+id: hemma
+icon: mdi:home
+cards:
+
+  # Left stack
+  - type: vertical-stack
+    cards:
+
+    # Device Tracker Horizontal
+    - type: horizontal-stack
+      cards:
+
+        # Device Tracker Kristoffer
+        - type: picture-entity
+          entity: device_tracker.kristoffer_presence
+          image: /local/pictures/people/kristoffer.jpeg
+          show_name: false
+          state_image:
+            "just_left": /local/pictures/people/kristoffer_bw.jpeg
+            "not_home": /local/pictures/people/kristoffer_bw.jpeg
+
+        # Device Tracker Johanna
+        - type: picture-entity
+          entity: device_tracker.johanna_presence
+          image: /local/pictures/people/johanna.jpeg
+          show_name: false
+          state_image:
+            "just_left": /local/pictures/people/johanna_bw.jpeg
+            "not_home": /local/pictures/people/johanna_bw.jpeg
+
+    - !include home_lights.yaml

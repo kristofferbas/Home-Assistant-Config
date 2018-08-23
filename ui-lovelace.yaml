@@ -4,9 +4,9 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/tracker-card.js?1535014573.5867672'}
-- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1535014573.5867672'}
-- {type: js, url: '/local/lovelace/slider-entity-row.js?1535014573.5867672'}
+- {type: js, url: '/local/lovelace/tracker-card.js?1535028382.4103272'}
+- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1535028382.4103272'}
+- {type: js, url: '/local/lovelace/slider-entity-row.js?1535028382.4103272'}
 title: Vårt Hem
 views:
 - cards:
@@ -23,23 +23,23 @@ views:
         state_image: {just_left: /local/pictures/people/johanna_bw.jpeg, not_home: /local/pictures/people/johanna_bw.jpeg}
         type: picture-entity
       type: horizontal-stack
+    - card: {show_header_toggle: false, title: Påslagen Belysning, type: entities}
+      entities:
+      - {entity: light.hallway_ceiling_1, icon: 'mdi:ceiling-light', name: Hall -
+          Taklampa, type: 'custom:slider-entity-row'}
+      - {break_slider: true, entity: light.livingroom_all_window, icon: 'mdi:lamp',
+        name: Vardagsrum - Fönsterbelysning, type: 'custom:slider-entity-row'}
+      - {break_slider: true, entity: light.bedroom_ceiling, icon: 'mdi:ceiling-light',
+        name: Sovrum - Taklampa, type: 'custom:slider-entity-row'}
+      - {break_slider: true, entity: light.bedroom_bureau, icon: 'mdi:lamp', name: Sovrum
+          - Byrålampa, type: 'custom:slider-entity-row'}
+      - {break_slider: true, entity: light.bedroom_window, icon: 'mdi:lamp', name: Sovrum
+          - Fönsterlampa, type: 'custom:slider-entity-row'}
+      - {break_slider: true, entity: light.olivia_ceiling, icon: 'mdi:ceiling-light',
+        name: Olivias Rum - Taklampa, type: 'custom:slider-entity-row'}
+      state_filter: ['on']
+      type: entity-filter
     type: vertical-stack
-  - card: {show_header_toggle: false, title: Påslagen Belysning, type: entities}
-    entities:
-    - {entity: light.hallway_ceiling_1, icon: 'mdi:ceiling-light', name: Hall - Taklampa,
-      type: 'custom:slider-entity-row'}
-    - {break_slider: true, entity: light.livingroom_all_window, icon: 'mdi:lamp',
-      name: Vardagsrum - Fönsterbelysning, type: 'custom:slider-entity-row'}
-    - {break_slider: true, entity: light.bedroom_ceiling, icon: 'mdi:ceiling-light',
-      name: Sovrum - Taklampa, type: 'custom:slider-entity-row'}
-    - {break_slider: true, entity: light.bedroom_bureau, icon: 'mdi:lamp', name: Sovrum
-        - Byrålampa, type: 'custom:slider-entity-row'}
-    - {break_slider: true, entity: light.bedroom_window, icon: 'mdi:lamp', name: Sovrum
-        - Fönsterlampa, type: 'custom:slider-entity-row'}
-    - {break_slider: true, entity: light.olivia_ceiling, icon: 'mdi:ceiling-light',
-      name: Olivias Rum - Taklampa, type: 'custom:slider-entity-row'}
-    state_filter: ['on']
-    type: entity-filter
   icon: mdi:home
   id: hemma
   title: Hemma
