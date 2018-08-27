@@ -4,6 +4,7 @@ entities:
     name: Hall - Taklampa
     icon: mdi:ceiling-light
     type: custom:slider-entity-row
+    break_slider: true
   - entity: light.livingroom_all_window
     name: Vardagsrum - Fönsterbelysning
     icon: mdi:lamp

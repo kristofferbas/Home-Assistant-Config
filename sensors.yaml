@@ -107,13 +107,13 @@
   #--------------------------#
   # RegroPie Glances         #
   #--------------------------#
-  - platform: glances
-    host: !secret retropie_glances_host
-    name: 'RetroPie'
-    resources:
-      - 'disk_use_percent'
-      - 'memory_use_percent'
-      - 'processor_load'
+  #- platform: glances
+  #  host: !secret retropie_glances_host
+  #  name: 'RetroPie'
+  #  resources:
+  #    - 'disk_use_percent'
+  #    - 'memory_use_percent'
+  #    - 'processor_load'
 
   #--------------------------#
   # OpenMediaVault Glances   #

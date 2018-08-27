@@ -117,9 +117,6 @@ cards:
               type: entities
               entities:
                 - type: divider
-                - entity: scene.olivia_default
-                  name: Normalt
-                  icon: mdi:lightbulb
-                - entity: scene.olivia_colored
-                  name: Disko
+                - entity: input_boolean.scene_olivia_ceiling
                   icon: mdi:palette
+                  name: Disko

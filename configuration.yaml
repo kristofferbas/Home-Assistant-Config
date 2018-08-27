@@ -38,7 +38,9 @@ history:
 logbook:
 
 logger:
-  default: debug
+  default: warn
+  logs:
+    custom_components.custom_updater: debug
 
 sun:
 
@@ -55,11 +57,6 @@ device_tracker:
 # Light Groups              #
 #--------------------------#
 light: !include groups_lights.yaml
-
-#--------------------------#
-# Scenes                   #
-#--------------------------#
-scene: !include scene.yaml
 
 ios:
 
@@ -103,6 +100,7 @@ input_boolean:
   notification_olivia_temperature:
   notification_livingroom_temperature:
   notification_bedroom_temperature:
+  scene_olivia_ceiling:
 
 # Shell Commands
 shell_command:

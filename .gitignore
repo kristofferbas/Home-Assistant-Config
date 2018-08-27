@@ -1,6 +1,8 @@
 *
 !*.yaml
 !www/
+!www/lovelace/
+!www/pictures/people/
 !README.md
 !lovelace/
 !lovelace/custom-cards/
