@@ -19,7 +19,9 @@ views:
 
   - !include speakers.yaml
 
-  - !include automations.yaml
+  - !include settings.yaml
+
+  - !include light_states.yaml
 
   - !include batteries.yaml
 

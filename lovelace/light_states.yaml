@@ -1,0 +1,43 @@
+# Light states
+title: Belysningsstatus
+id: belysningsstatus
+icon: mdi:light-switch
+cards:
+
+  - type: entities
+    title: Hallen
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.light_state_hallway_ceiling
+        icon: mdi:ceiling-light
+        name: Taklampa
+
+  - type: entities
+    title: Vardagsrummet
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.light_state_livingroom_window
+        icon: mdi:lamp
+        name: Fönsterbelysning
+
+  - type: entities
+    title: Sovrummet
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.light_state_bedroom_window
+        icon: mdi:lamp
+        name: Fönsterlampa
+      - entity: input_boolean.light_state_bedroom_bureau
+        icon: mdi:lamp
+        name: Byrålampa
+      - entity: input_boolean.light_state_bedroom_ceiling
+        icon: mdi:ceiling-light
+        name: Taklampa
+
+  - type: entities
+    title: Olivias Rum
+    show_header_toggle: false
+    entities:
+      - entity: input_boolean.light_state_olivia_ceiling
+        icon: mdi:ceiling-light
+        name: Taklampa
