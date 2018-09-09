@@ -69,6 +69,51 @@ cards:
         icon: mdi:arrow-up-bold
         name: Maximum
 
+  - type: custom:vertical-stack-in-card
+    title: Belysningsstatus
+    cards:
+      - type: entities
+        show_header_toggle: false
+        entities:
+          - type: divider
+      - type: entities
+        title: Hallen
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.light_state_hallway_ceiling
+            icon: mdi:ceiling-light
+            name: Taklampa
+          - type: divider
+      - type: entities
+        title: Vardagsrummet
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.light_state_livingroom_window
+            icon: mdi:lamp
+            name: Fönsterbelysning
+          - type: divider
+      - type: entities
+        title: Sovrummet
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.light_state_bedroom_window
+            icon: mdi:lamp
+            name: Fönsterlampa
+          - entity: input_boolean.light_state_bedroom_bureau
+            icon: mdi:lamp
+            name: Byrålampa
+          - entity: input_boolean.light_state_bedroom_ceiling
+            icon: mdi:ceiling-light
+            name: Taklampa
+          - type: divider
+      - type: entities
+        title: Olivias Rum
+        show_header_toggle: false
+        entities:
+          - entity: input_boolean.light_state_olivia_ceiling
+            icon: mdi:ceiling-light
+            name: Taklampa
+
   # Generators
   - type: entities
     title: Generatorer

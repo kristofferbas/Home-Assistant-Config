@@ -4,9 +4,9 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/tracker-card.js?1535355305.277346&v=0.1.4'}
-- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1535355305.277346&v=0.0.6'}
-- {type: js, url: '/local/lovelace/slider-entity-row.js?1535355305.277346&v=11fc8d'}
+- {type: js, url: '/local/lovelace/tracker-card.js?1536480194.118127&v=0.1.4'}
+- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1536480194.118127&v=0.0.6'}
+- {type: js, url: '/local/lovelace/slider-entity-row.js?1536480194.118127&v=11fc8d'}
 title: Vårt Hem
 views:
 - cards:
@@ -207,6 +207,41 @@ views:
     show_header_toggle: false
     title: Temperaturnotifieringar
     type: entities
+  - cards:
+    - entities:
+      - {type: divider}
+      show_header_toggle: false
+      type: entities
+    - entities:
+      - {entity: input_boolean.light_state_hallway_ceiling, icon: 'mdi:ceiling-light',
+        name: Taklampa}
+      - {type: divider}
+      show_header_toggle: false
+      title: Hallen
+      type: entities
+    - entities:
+      - {entity: input_boolean.light_state_livingroom_window, icon: 'mdi:lamp', name: Fönsterbelysning}
+      - {type: divider}
+      show_header_toggle: false
+      title: Vardagsrummet
+      type: entities
+    - entities:
+      - {entity: input_boolean.light_state_bedroom_window, icon: 'mdi:lamp', name: Fönsterlampa}
+      - {entity: input_boolean.light_state_bedroom_bureau, icon: 'mdi:lamp', name: Byrålampa}
+      - {entity: input_boolean.light_state_bedroom_ceiling, icon: 'mdi:ceiling-light',
+        name: Taklampa}
+      - {type: divider}
+      show_header_toggle: false
+      title: Sovrummet
+      type: entities
+    - entities:
+      - {entity: input_boolean.light_state_olivia_ceiling, icon: 'mdi:ceiling-light',
+        name: Taklampa}
+      show_header_toggle: false
+      title: Olivias Rum
+      type: entities
+    title: Belysningsstatus
+    type: custom:vertical-stack-in-card
   - entities:
     - action_name: Kör
       icon: mdi:refresh

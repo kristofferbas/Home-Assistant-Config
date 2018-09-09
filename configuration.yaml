@@ -7,10 +7,6 @@ homeassistant:
   time_zone: Europe/Stockholm
   customize: !include customize.yaml
 
-  auth_providers:
-   - type: homeassistant
-   - type: legacy_api_password
-
 auth:
 
 frontend:
@@ -64,11 +60,6 @@ notify:
 
 custom_updater:
 
-homekit:
-  filter:
-    include_domains:
-      - light
-
 media_player:
   - platform: kodi
     host: !secret kodi_host
@@ -101,6 +92,14 @@ input_boolean:
   notification_livingroom_temperature:
   notification_bedroom_temperature:
   scene_olivia_ceiling:
+
+  #light_states
+  light_state_livingroom_window:
+  light_state_bedroom_window:
+  light_state_bedroom_bureau:
+  light_state_bedroom_ceiling:
+  light_state_olivia_ceiling:
+  light_state_hallway_ceiling:
 
 # Shell Commands
 shell_command:
