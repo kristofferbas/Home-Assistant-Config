@@ -3,7 +3,7 @@ resources:
     type: js
   - url: !resource custom-cards/vertical-stack-in-card.js?v=0.0.6
     type: js
-  - url: !resource custom-cards/slider-entity-row.js?v=11fc8d
+  - url: !resource custom-cards/slider-entity-row.js?v=2d9e00
     type: js
 
 title: Vårt Hem
