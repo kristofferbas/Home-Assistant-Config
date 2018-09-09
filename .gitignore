@@ -1,12 +1,8 @@
-*
-!*.yaml
-!www/
-!www/lovelace/
-!www/pictures/people/
-!README.md
-!lovelace/
-!lovelace/custom-cards/
+**
 secrets.yaml
 known_devices.yaml
 ._*
-lovelace/._*
+!lovelace/**
+lovelace/**/._*
+!www/**
+www/**/._*
