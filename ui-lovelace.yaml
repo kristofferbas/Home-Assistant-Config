@@ -4,9 +4,9 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/tracker-card.js?1536495242.6628904&v=0.1.4'}
-- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1536495242.6628904&v=0.0.6'}
-- {type: js, url: '/local/lovelace/slider-entity-row.js?1536495242.6628904&v=2d9e00'}
+- {type: js, url: '/local/lovelace/tracker-card.js?1536574015.262794&v=0.1.4'}
+- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1536574015.262794&v=0.0.6'}
+- {type: js, url: '/local/lovelace/slider-entity-row.js?1536574015.262794&v=2d9e00'}
 title: Vårt Hem
 views:
 - cards:
@@ -41,7 +41,7 @@ views:
       type: entity-filter
     type: vertical-stack
   icon: mdi:home
-  id: hemma
+  id: home
   title: Hemma
 - cards:
   - cards:
@@ -85,7 +85,7 @@ views:
     - {entity: weather.yweather, type: weather-forecast}
     type: vertical-stack
   icon: mdi:thermometer
-  id: klimat
+  id: climate
   title: Klimat
 - cards:
   - cards:
@@ -151,11 +151,12 @@ views:
       type: custom:vertical-stack-in-card
     type: vertical-stack
   icon: mdi:lightbulb-on
-  id: belysning
+  id: lights
   title: Belysning
 - cards:
   - {entity: media_player.livingroom_chromecast, type: media-control}
   - {entity: media_player.kodi, type: media-control}
+  - {entity: media_player.bedroom_chromecast, type: media-control}
   icon: mdi:television
   id: tv
   title: TV
@@ -165,8 +166,8 @@ views:
     state_filter: [playing]
     type: entity-filter
   icon: mdi:speaker-wireless
-  id: sonos
-  title: Sonos
+  id: speakers
+  title: Högtalare
 - cards:
   - entities:
     - {entity: input_boolean.livingroom_window_timer, icon: 'mdi:timer', name: Vardagsrum
@@ -221,8 +222,8 @@ views:
     trackers: [sensor.custom_card_tracker, sensor.custom_component_tracker]
     type: custom:tracker-card
   icon: mdi:toggle-switch
-  id: automationer
-  title: Automationer
+  id: settings
+  title: Inställningar
 - cards:
   - entities:
     - {entity: input_boolean.light_state_hallway_ceiling, icon: 'mdi:ceiling-light',
@@ -250,7 +251,7 @@ views:
     title: Olivias Rum
     type: entities
   icon: mdi:light-switch
-  id: belysningsstatus
+  id: lightstates
   title: Belysningsstatus
 - cards:
   - entities:
@@ -273,7 +274,7 @@ views:
     title: Mobila Enheter
     type: entities
   icon: mdi:battery
-  id: batterier
+  id: batteries
   title: Batterier
 - cards:
   - cards:
@@ -329,5 +330,5 @@ views:
       type: entities
     type: vertical-stack
   icon: mdi:server-network
-  id: system
+  id: systems
   title: System

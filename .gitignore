@@ -2,6 +2,7 @@
 !*.yaml
 secrets.yaml
 known_devices.yaml
-!lovelace/**
-!www/**
+!/lovelace/**
+!/www/**
 **/._*
+!.gitignore

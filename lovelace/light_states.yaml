@@ -1,6 +1,6 @@
 # Light states
 title: Belysningsstatus
-id: belysningsstatus
+id: lightstates
 icon: mdi:light-switch
 cards:
 
