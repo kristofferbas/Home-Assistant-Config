@@ -1,8 +1,7 @@
-**
+*
+!*.yaml
 secrets.yaml
 known_devices.yaml
-._*
 !lovelace/**
-lovelace/**/._*
 !www/**
-www/**/._*
+**/._*

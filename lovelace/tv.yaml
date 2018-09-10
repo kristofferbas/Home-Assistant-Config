@@ -11,3 +11,7 @@ cards:
   # Livingroom Kodi
   - type: media-control
     entity: media_player.kodi
+
+  # Bedroom Chromecast
+  - type: media-control
+    entity: media_player.bedroom_chromecast
