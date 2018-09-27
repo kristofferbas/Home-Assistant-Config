@@ -4,9 +4,9 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/tracker-card.js?1536574015.262794&v=0.1.4'}
-- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1536574015.262794&v=0.0.6'}
-- {type: js, url: '/local/lovelace/slider-entity-row.js?1536574015.262794&v=2d9e00'}
+- {type: js, url: '/local/lovelace/tracker-card.js?1538035189.851109&v=0.1.4'}
+- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1538035189.851109&v=0.0.6'}
+- {type: js, url: '/local/lovelace/slider-entity-row.js?1538035189.851109&v=2d9e00'}
 title: Vårt Hem
 views:
 - cards:
@@ -213,6 +213,12 @@ views:
       icon: mdi:refresh
       name: Generera nytt Lovelace UI
       service: shell_command.lovelace_gen
+      service_data: {}
+      type: call-service
+    - action_name: Kör
+      icon: mdi:refresh
+      name: Uppdatera Deconz-enheter
+      service: deconz.device_refresh
       service_data: {}
       type: call-service
     show_header_toggle: false

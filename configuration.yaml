@@ -26,6 +26,8 @@ updater:
 
 discovery:
 
+deconz:
+
 mqtt:
   broker: core-mosquitto
 
@@ -37,6 +39,8 @@ logger:
   default: warn
   logs:
     custom_components.custom_updater: debug
+    pydeconz: debug
+    homeassistant.components.deconz: debug
 
 sun:
 
@@ -46,6 +50,11 @@ tts:
 config:
 
 cloud:
+  google_actions:
+    filter:
+      include_domains:
+        - light
+        - media_player
 
 device_tracker:
 

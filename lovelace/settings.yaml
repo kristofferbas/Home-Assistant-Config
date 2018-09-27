@@ -81,6 +81,12 @@ cards:
         action_name: "Kör"
         service_data: {}
         name: Generera nytt Lovelace UI
+      - type: call-service
+        service: deconz.device_refresh
+        icon: mdi:refresh
+        action_name: "Kör"
+        service_data: {}
+        name: Uppdatera Deconz-enheter
 
   - type: custom:tracker-card
     title:
