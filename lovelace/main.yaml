@@ -1,9 +1,11 @@
 resources:
-  - url: !resource custom-cards/tracker-card.js?v=0.1.4
+  - url: !resource custom-cards/tracker-card.js?v=0.1.5
     type: js
-  - url: !resource custom-cards/vertical-stack-in-card.js?v=0.0.6
+  - url: !resource custom-cards/vertical-stack-in-card.js?v=0.0.8
     type: js
   - url: !resource custom-cards/slider-entity-row.js?v=2d9e00
+    type: js
+  - url: !resource custom-cards/folding-group-entity-row.js?v=98faea
     type: js
 
 title: Vårt Hem

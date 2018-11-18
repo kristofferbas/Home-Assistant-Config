@@ -31,3 +31,31 @@ cards:
             "not_home": /local/pictures/people/johanna_bw.jpeg
 
     - !include home_lights.yaml
+
+  # Right stack
+  - type: vertical-stack
+    cards:
+
+    - type: sensor
+      entity: sensor.livingroom_temperature_sensor
+      name: Vardagsrum
+      height: 50
+      line_width: 3
+      hours_to_show: 12
+
+    - type: horizontal-stack
+      cards:
+
+        - type: sensor
+          entity: sensor.bedroom_temperature_sensor
+          name: Sovrum
+          height: 50
+          line_width: 3
+          hours_to_show: 12
+
+        - type: sensor
+          entity: sensor.olivia_temperature_sensor
+          name: Olivias rum
+          height: 50
+          line_width: 3
+          hours_to_show: 12

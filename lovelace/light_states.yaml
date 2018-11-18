@@ -41,3 +41,6 @@ cards:
       - entity: input_boolean.light_state_olivia_ceiling
         icon: mdi:ceiling-light
         name: Taklampa
+      - entity: input_boolean.light_state_olivia_window
+        icon: mdi:lamp
+        name: Fönsterlampa

@@ -31,7 +31,7 @@
   # Kristoffer Presence BT   #
   #--------------------------#
   - platform: mqtt
-    state_topic: 'location/owner/vardagsrummet/70:F0:87:DC:F1:53'
+    state_topic: 'location/livingroom-banana/70:F0:87:DC:F1:53'
     value_template: '{{ value_json.confidence }}'
     unit_of_measurement: '%'
     name: 'Presence Kristoffer Livingroom'
@@ -47,7 +47,7 @@
   # Johanna Presence BT      #
   #--------------------------#
   - platform: mqtt
-    state_topic: 'location/owner/vardagsrummet/00:00:00:00:00:00'
+    state_topic: 'location/livingroom-banana/00:00:00:00:00:00'
     value_template: '{{ value_json.confidence }}'
     unit_of_measurement: '%'
     name: 'Presence Johanna Livingroom'
@@ -118,10 +118,10 @@
   #--------------------------#
   # OpenMediaVault Glances   #
   #--------------------------#
-  - platform: glances
-    host: !secret omv_glances_host
-    name: 'OpenMediaVault'
-    resources:
-      - 'disk_use_percent'
-      - 'memory_use_percent'
-      - 'processor_load'
+  #- platform: glances
+  #  host: !secret omv_glances_host
+  #  name: 'OpenMediaVault'
+  #  resources:
+  #    - 'disk_use_percent'
+  #    - 'memory_use_percent'
+  #    - 'processor_load'

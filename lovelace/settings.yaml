@@ -15,6 +15,9 @@ cards:
       - entity: input_boolean.bedroom_window_timer
         icon: mdi:timer
         name: Sovrum - Fönsterlampa
+      - entity: input_boolean.olivia_window_timer
+        icon: mdi:timer
+        name: Olivias rum - Fönsterlampa
 
   # Programs
   - type: entities

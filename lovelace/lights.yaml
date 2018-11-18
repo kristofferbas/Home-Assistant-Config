@@ -7,22 +7,31 @@ cards:
   - type: vertical-stack
     cards:
 
-      - type: glance
-        show_name: false
-        show_state: false
-        column_width: calc(100% / 4)
-        entities:
-          - entity: light.all_hallway
+      - type: horizontal-stack
+        cards:
+
+          - type: entity-button
+            entity: light.all_hallway
             icon: mdi:door
+            name: Hall
             tap_action: toggle
-          - entity: light.all_livingroom
+
+          - type: entity-button
+            entity: light.all_livingroom
             icon: mdi:sofa
+            name: Vardagsrum
             tap_action: toggle
-          - entity: light.all_bedroom
+
+          - type: entity-button
+            entity: light.all_bedroom
             icon: mdi:hotel
+            name: Sovrum
             tap_action: toggle
-          - entity: light.all_olivia
+
+          - type: entity-button
+            entity: light.all_olivia
             icon: mdi:cat
+            name: Olivias Rum
             tap_action: toggle
 
       # Hallway lights
@@ -103,6 +112,12 @@ cards:
         cards:
           - type: entities
             entities:
+              - entity: light.olivia_window
+                name: Fönsterlampa
+                icon: mdi:lamp
+                type: custom:slider-entity-row
+                break_slider: true
+                hide_when_off: true
               - entity: light.olivia_ceiling
                 name: Taklampa
                 icon: mdi:ceiling-light
@@ -117,6 +132,12 @@ cards:
               type: entities
               entities:
                 - type: divider
-                - entity: input_boolean.scene_olivia_ceiling
+                - entity: input_boolean.olivia_good_morning
+                  icon: mdi:weather-sunset-up
+                  name: Godmorgon
+                - entity: input_boolean.olivia_good_night
+                  icon: mdi:weather-sunset-down
+                  name: Godnatt
+                - entity: input_boolean.olivia_disco
                   icon: mdi:palette
                   name: Disko

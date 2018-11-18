@@ -12,6 +12,9 @@ cards:
   - type: media-control
     entity: media_player.kodi
 
+  - type: media-control
+    entity: media_player.xbox_one_s
+
   # Bedroom Chromecast
   - type: media-control
     entity: media_player.bedroom_chromecast

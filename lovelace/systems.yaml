@@ -78,3 +78,15 @@ cards:
         - entity: sensor.samsung_m2020_series_1000251_output_tray_0
         - entity: sensor.samsung_m2020_series_1000251_toner_black
         - entity: sensor.samsung_m2020_series_1000251_tray_1
+
+    - type: history-graph
+      title: Compal
+      entities:
+        - entity: sensor.compal_broadband_networks_ch7486e_bytes_received
+        - entity: sensor.compal_broadband_networks_ch7486e_bytes_sent
+        - entity: sensor.compal_broadband_networks_ch7486e_kbytesec_received
+        - entity: sensor.compal_broadband_networks_ch7486e_kbytesec_sent
+        - entity: sensor.compal_broadband_networks_ch7486e_packets_received
+        - entity: sensor.compal_broadband_networks_ch7486e_packets_sent
+        - entity: sensor.compal_broadband_networks_ch7486e_packetssec_received
+        - entity: sensor.compal_broadband_networks_ch7486e_packetssec_sent

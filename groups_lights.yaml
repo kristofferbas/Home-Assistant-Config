@@ -20,6 +20,7 @@
     name: all_olivia
     entities:
       - light.olivia_ceiling
+      - light.olivia_window
 
   - platform: group
     name: livingroom_all_window

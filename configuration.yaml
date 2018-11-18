@@ -15,10 +15,6 @@ frontend:
     midnight: !include theme_midnight.yaml
 
 http:
-  api_password: !secret http_password
-  # Uncomment this if you are using SSL/TLS, running in Docker container, etc.
-  #ssl_certificate: /ssl/fullchain.pem
-  #ssl_key: /ssl/privkey.pem
 
 updater:
   # Optional, allows Home Assistant developers to focus on popular components.
@@ -52,9 +48,48 @@ config:
 cloud:
   google_actions:
     filter:
-      include_domains:
-        - light
-        - media_player
+      include_entities:
+        - light.livingroom_all_window
+        - light.livingroom_window_1
+        - light.livingroom_window_2
+        - light.olivia_ceiling
+        - light.olivia_window
+        - light.bedroom_window
+        - input_boolean.olivia_disco
+        - input_boolean.olivia_good_morning
+        - input_boolean.olivia_good_night
+    entity_config:
+      light.livingroom_all_window:
+        name: Fönsterlampor
+        room: Vardagsrum
+      light.livingroom_window_1:
+        name: Vänster Fönsterlampa
+        room: Vardagsrum
+      light.livingroom_window_2:
+        name: Höger Fönsterlampa
+        room: Vardagsrum
+      light.olivia_ceiling:
+        name: Taklampa
+        aliases:
+          - Olivias taklampa
+        room: Olivias Rum
+      light.olivia_window:
+        name: Fönsterlampa
+        aliases:
+          - Olivias fönsterlampa
+        room: Olivias rum
+      light.bedroom_window:
+        name: Fönsterlampa
+        room: Sovrummet
+      input_boolean.olivia_good_morning:
+        name: Godmorgon Olivia
+        room: Olivias rum
+      input_boolean.olivia_good_night:
+        name: Godnatt Olivia
+        room: Olivias rum
+      input_boolean.olivia_disco:
+        name: Disko Olivia
+        room: Olivias rum
 
 device_tracker:
 
@@ -68,12 +103,19 @@ ios:
 notify:
 
 custom_updater:
+  track:
+    - components
+    - cards
 
 media_player:
   - platform: kodi
     host: !secret kodi_host
     username: !secret kodi_username
     password: !secret kodi_password
+
+  - platform: xboxone
+    device: FD00ADAAD85A091D
+    name: Xbox One S
 
 #--------------------------#
 # Sensors                  #
@@ -93,14 +135,13 @@ recorder:
 input_boolean:
   livingroom_window_timer:
   bedroom_window_timer:
+  olivia_window_timer:
   program_vacation:
-  lovelace_generate_ui:
   program_winter:
   program_christmas:
   notification_olivia_temperature:
   notification_livingroom_temperature:
   notification_bedroom_temperature:
-  scene_olivia_ceiling:
 
   #light_states
   light_state_livingroom_window:
@@ -108,7 +149,13 @@ input_boolean:
   light_state_bedroom_bureau:
   light_state_bedroom_ceiling:
   light_state_olivia_ceiling:
+  light_state_olivia_window:
   light_state_hallway_ceiling:
+
+  # Automations
+  olivia_good_morning:
+  olivia_good_night:
+  olivia_disco:
 
 # Shell Commands
 shell_command:

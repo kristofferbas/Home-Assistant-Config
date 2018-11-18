@@ -4,9 +4,10 @@
 # Any changes made to it will be overwritten the next time the script is run.
 
 resources:
-- {type: js, url: '/local/lovelace/tracker-card.js?1538035189.851109&v=0.1.4'}
-- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1538035189.851109&v=0.0.6'}
-- {type: js, url: '/local/lovelace/slider-entity-row.js?1538035189.851109&v=2d9e00'}
+- {type: js, url: '/local/lovelace/tracker-card.js?1542309871.338146&v=0.1.5'}
+- {type: js, url: '/local/lovelace/vertical-stack-in-card.js?1542309871.338146&v=0.0.8'}
+- {type: js, url: '/local/lovelace/slider-entity-row.js?1542309871.338146&v=2d9e00'}
+- {type: js, url: '/local/lovelace/folding-group-entity-row.js?1542309871.338146&v=98faea'}
 title: Vårt Hem
 views:
 - cards:
@@ -37,8 +38,20 @@ views:
           - Fönsterlampa, type: 'custom:slider-entity-row'}
       - {break_slider: true, entity: light.olivia_ceiling, icon: 'mdi:ceiling-light',
         name: Olivias Rum - Taklampa, type: 'custom:slider-entity-row'}
+      - {break_slider: true, entity: light.olivia_window, icon: 'mdi:lamp', name: Olivias
+          rum - Fönsterlampa, type: 'custom:slider-entity-row'}
       state_filter: ['on']
       type: entity-filter
+    type: vertical-stack
+  - cards:
+    - {entity: sensor.livingroom_temperature_sensor, height: 50, hours_to_show: 12,
+      line_width: 3, name: Vardagsrum, type: sensor}
+    - cards:
+      - {entity: sensor.bedroom_temperature_sensor, height: 50, hours_to_show: 12,
+        line_width: 3, name: Sovrum, type: sensor}
+      - {entity: sensor.olivia_temperature_sensor, height: 50, hours_to_show: 12,
+        line_width: 3, name: Olivias rum, type: sensor}
+      type: horizontal-stack
     type: vertical-stack
   icon: mdi:home
   id: home
@@ -89,15 +102,16 @@ views:
   title: Klimat
 - cards:
   - cards:
-    - column_width: calc(100% / 4)
-      entities:
-      - {entity: light.all_hallway, icon: 'mdi:door', tap_action: toggle}
-      - {entity: light.all_livingroom, icon: 'mdi:sofa', tap_action: toggle}
-      - {entity: light.all_bedroom, icon: 'mdi:hotel', tap_action: toggle}
-      - {entity: light.all_olivia, icon: 'mdi:cat', tap_action: toggle}
-      show_name: false
-      show_state: false
-      type: glance
+    - cards:
+      - {entity: light.all_hallway, icon: 'mdi:door', name: Hall, tap_action: toggle,
+        type: entity-button}
+      - {entity: light.all_livingroom, icon: 'mdi:sofa', name: Vardagsrum, tap_action: toggle,
+        type: entity-button}
+      - {entity: light.all_bedroom, icon: 'mdi:hotel', name: Sovrum, tap_action: toggle,
+        type: entity-button}
+      - {entity: light.all_olivia, icon: 'mdi:cat', name: Olivias Rum, tap_action: toggle,
+        type: entity-button}
+      type: horizontal-stack
     - entities:
       - {break_slider: true, entity: light.hallway_ceiling_1, hide_when_off: true,
         icon: 'mdi:ceiling-light', name: Taklampa, type: 'custom:slider-entity-row'}
@@ -136,13 +150,19 @@ views:
       type: entities
     - cards:
       - entities:
+        - {break_slider: true, entity: light.olivia_window, hide_when_off: true, icon: 'mdi:lamp',
+          name: Fönsterlampa, type: 'custom:slider-entity-row'}
         - {break_slider: true, entity: light.olivia_ceiling, hide_when_off: true,
           icon: 'mdi:ceiling-light', name: Taklampa, type: 'custom:slider-entity-row'}
         type: entities
       - card:
           entities:
           - {type: divider}
-          - {entity: input_boolean.scene_olivia_ceiling, icon: 'mdi:palette', name: Disko}
+          - {entity: input_boolean.olivia_good_morning, icon: 'mdi:weather-sunset-up',
+            name: Godmorgon}
+          - {entity: input_boolean.olivia_good_night, icon: 'mdi:weather-sunset-down',
+            name: Godnatt}
+          - {entity: input_boolean.olivia_disco, icon: 'mdi:palette', name: Disko}
           type: entities
         conditions:
         - {entity: light.olivia_ceiling, state: 'on'}
@@ -156,15 +176,14 @@ views:
 - cards:
   - {entity: media_player.livingroom_chromecast, type: media-control}
   - {entity: media_player.kodi, type: media-control}
+  - {entity: media_player.xbox_one_s, type: media-control}
   - {entity: media_player.bedroom_chromecast, type: media-control}
   icon: mdi:television
   id: tv
   title: TV
 - cards:
-  - card: {entity: media_player.livingroom_sonos, type: media-control}
-    entities: [media_player.livingroom_sonos]
-    state_filter: [playing]
-    type: entity-filter
+  - {entity: media_player.kitchen_googlehome, type: media-control}
+  - {entity: media_player.livingroom_sonos, type: media-control}
   icon: mdi:speaker-wireless
   id: speakers
   title: Högtalare
@@ -174,6 +193,8 @@ views:
         - Fönsterlampor}
     - {entity: input_boolean.bedroom_window_timer, icon: 'mdi:timer', name: Sovrum
         - Fönsterlampa}
+    - {entity: input_boolean.olivia_window_timer, icon: 'mdi:timer', name: Olivias
+        rum - Fönsterlampa}
     show_header_toggle: false
     title: Timers
     type: entities
@@ -253,6 +274,7 @@ views:
   - entities:
     - {entity: input_boolean.light_state_olivia_ceiling, icon: 'mdi:ceiling-light',
       name: Taklampa}
+    - {entity: input_boolean.light_state_olivia_window, icon: 'mdi:lamp', name: Fönsterlampa}
     show_header_toggle: false
     title: Olivias Rum
     type: entities
@@ -334,6 +356,17 @@ views:
       - {entity: sensor.samsung_m2020_series_1000251_tray_1}
       title: Samsung M2020 - Vardagsrummet
       type: entities
+    - entities:
+      - {entity: sensor.compal_broadband_networks_ch7486e_bytes_received}
+      - {entity: sensor.compal_broadband_networks_ch7486e_bytes_sent}
+      - {entity: sensor.compal_broadband_networks_ch7486e_kbytesec_received}
+      - {entity: sensor.compal_broadband_networks_ch7486e_kbytesec_sent}
+      - {entity: sensor.compal_broadband_networks_ch7486e_packets_received}
+      - {entity: sensor.compal_broadband_networks_ch7486e_packets_sent}
+      - {entity: sensor.compal_broadband_networks_ch7486e_packetssec_received}
+      - {entity: sensor.compal_broadband_networks_ch7486e_packetssec_sent}
+      title: Compal
+      type: history-graph
     type: vertical-stack
   icon: mdi:server-network
   id: systems

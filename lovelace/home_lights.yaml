@@ -30,6 +30,11 @@ entities:
     icon: mdi:ceiling-light
     type: custom:slider-entity-row
     break_slider: true
+  - entity: light.olivia_window
+    name: Olivias rum - Fönsterlampa
+    icon: mdi:lamp
+    type: custom:slider-entity-row
+    break_slider: true
 state_filter:
   - "on"
 card:

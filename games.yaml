@@ -1,0 +1,9 @@
+# Games
+title: Spel
+id: games
+icon: mdi:google-controller
+cards:
+
+  # Livingroom Xbox One S
+  - type: media-control
+    entity: media_player.xbox_one_s

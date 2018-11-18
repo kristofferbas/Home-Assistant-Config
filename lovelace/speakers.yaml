@@ -4,12 +4,10 @@ id: speakers
 icon: mdi:speaker-wireless
 cards:
 
+  # Kitchen Google Home Mini
+  - type: media-control
+    entity: media_player.kitchen_googlehome
+
   # Livingroom Sonos if playing
-  - type: entity-filter
-    entities:
-      - media_player.livingroom_sonos
-    state_filter:
-      - 'playing'
-    card:
-      type: media-control
-      entity: media_player.livingroom_sonos
+  - type: media-control
+    entity: media_player.livingroom_sonos
